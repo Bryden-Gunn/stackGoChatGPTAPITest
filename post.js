@@ -1,16 +1,13 @@
 const https = require('https')
 
 const data = JSON.stringify({
-  title: 'Node.js test post',
-  content: 'this is a test post from node.js project',
+  title: 'Node.js test post 2',
+  content: 'this is a test post from node.js project 2',
   status: 'publish',
 })
 
 const auth =
-  'Basic ' +
-  Buffer.from('jamesblakealive:bqLG xGcM puCV K68Q Q5tD wCIY', 'utf8').toString(
-    'base64'
-  )
+  'Basic ' + Buffer.from('username:password', 'utf8').toString('base64')
 
 console.log(auth)
 
@@ -19,8 +16,7 @@ const options = {
   path: '/wp-json/wp/v2/posts',
   method: 'POST',
   headers: {
-    authorization:
-      'Basic amFtZXNibGFrZWFsaXZlOmJxTEcgeEdjTSBwdUNWIEs2OFEgUTV0RCB3Q2xZ',
+    authorization: auth,
     'Content-Type': 'application/json',
     'Content-Length': data.length,
   },
