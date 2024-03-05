@@ -1,13 +1,18 @@
 const https = require('https')
+require('dotenv').config()
 
 const data = JSON.stringify({
-  title: 'Node.js test post 2',
-  content: 'this is a test post from node.js project 2',
+  title: 'Node.js test post 3',
+  content: 'this is a test post from node.js project 3',
   status: 'publish',
 })
 
 const auth =
-  'Basic ' + Buffer.from('username:password', 'utf8').toString('base64')
+  'Basic ' +
+  Buffer.from(
+    process.env.WORDPRESS_USERNAME + ':' + process.env.WORDPRESS_PASSWORD,
+    'utf8'
+  ).toString('base64')
 
 console.log(auth)
 
