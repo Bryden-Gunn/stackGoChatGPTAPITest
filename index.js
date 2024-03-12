@@ -3,15 +3,26 @@ import makePost from './post.js'
 
 //Declare app name and URL
 
-const appname = 'Airtable'
-const appUrl = 'https://www.airtable.com/v1'
+class App {
+  constructor(appname, appUrl) {
+    this.appname = appname
+    this.appUrl = appUrl
+  }
+}
+
+const list = [
+  new App('Notion', 'https://www.notion.so/'),
+  new App('Shopify', 'https://www.shopify.com/'),
+  new App('Quickbooks', 'https://quickbooks.intuit.com/'),
+]
 
 //Generate Page using Chat GPT
 
 async function doTheThing(appname, appUrl) {
   const content = await generatePage(appname, appUrl)
-  console.log(content)
-  makePost(content)
+  makePost(content, appname)
 }
 
-doTheThing()
+list.map((app) => {
+  doTheThing(app.appname, app.appUrl)
+})

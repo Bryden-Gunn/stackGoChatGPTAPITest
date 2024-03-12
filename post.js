@@ -5,9 +5,12 @@ import https from 'https'
 
 import {} from 'dotenv/config'
 
-export default function makePost(content) {
+export default function makePost(content, appname) {
   const data = JSON.stringify({
-    title: 'Test',
+    title:
+      'Integrate IdentityCheck with ' +
+      appname +
+      '  for Seamless ID Verification',
     content: content,
     status: 'publish',
     // categories: [3],
@@ -19,8 +22,6 @@ export default function makePost(content) {
       process.env.WORDPRESS_USERNAME + ':' + process.env.WORDPRESS_PASSWORD,
       'utf8'
     ).toString('base64')
-
-  console.log(auth)
 
   const options = {
     hostname: 'stackgoidentitychecktest.wpcomstaging.com',
@@ -44,7 +45,7 @@ export default function makePost(content) {
       })
 
       res.on('end', () => {
-        console.log('Body: ', JSON.parse(data))
+        console.log('Body: ', JSON.parse(data).link)
       })
     })
     .on('error', (err) => {
