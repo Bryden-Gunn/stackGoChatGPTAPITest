@@ -20,6 +20,7 @@ const list = [
   new App('Woo', 'https://woo.com/'),
   new App('Webflow', 'https://webflow.com/'),
   new App('Monday.com', 'https://monday.com/'),
+  new App('WordPress', 'https://wordpress.com/'),
 ]
 
 //Generate Page using Chat GPT

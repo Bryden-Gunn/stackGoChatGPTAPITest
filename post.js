@@ -12,7 +12,7 @@ export default function makePost(content, appname) {
       appname +
       '  for Seamless ID Verification',
     content: content,
-    status: 'publish',
+    status: 'draft',
     // categories: [3],
   })
 
@@ -24,7 +24,7 @@ export default function makePost(content, appname) {
     ).toString('base64')
 
   const options = {
-    hostname: 'stackgoidentitychecktest.wpcomstaging.com',
+    hostname: 'stackgo.io',
     path: '/wp-json/wp/v2/posts',
     method: 'POST',
     headers: {
