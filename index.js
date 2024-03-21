@@ -20,6 +20,20 @@ const list = [
   new App('Woo', 'https://woo.com/'),
   new App('Webflow', 'https://webflow.com/'),
   new App('Monday.com', 'https://monday.com/'),
+  new App('WordPress', 'https://wordpress.com/'),
+  new App('Calendly', 'https://calendly.com/'),
+  new App(
+    'Google Calendar',
+    'https://workspace.google.com/products/calendar/?hl=en-US'
+  ),
+  new App('Asana', 'https://asana.com/'),
+  new App('NetSuite', 'https://www.netsuite.com/portal/home.shtml'),
+  new App('DocuSign', 'https://www.docusign.com/'),
+  new App('Slack', 'https://slack.com/intl/en-au/'),
+  new App('Clickup', 'https://clickup.com/'),
+  new App('Trello', 'https://trello.com/'),
+  new App('Smartsheet', 'https://www.smartsheet.com/'),
+  new App('PandaDoc', 'https://www.pandadoc.com/'),
 ]
 
 //Generate Page using Chat GPT
