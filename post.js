@@ -4,6 +4,7 @@ import https from 'https'
 // require('dotenv').config()
 
 import {} from 'dotenv/config'
+import { log } from 'console'
 
 export default function makePost(content, appname) {
   const data = JSON.stringify({
@@ -36,12 +37,12 @@ export default function makePost(content, appname) {
       'Content-Length': data.length,
     },
   }
-
   const req = https
     .request(options, (res) => {
       let data = ''
 
       console.log('Status Code:', res.statusCode)
+      console.log(appname)
 
       res.on('data', (chunk) => {
         data += chunk
